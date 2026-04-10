@@ -64,3 +64,51 @@
 2026-03-17T11:21:26.801Z info: Login successful for ashu@gmail.com
 2026-03-17T11:23:02.534Z info: Login request received
 2026-03-17T11:23:02.535Z info: Login successful for ashu@gmail.com
+2026-04-06T10:35:48.000Z info: Server running on port 5000
+2026-04-07T05:26:33.873Z info: Server running on port 5000
+2026-04-08T11:37:14.235Z info: Server running on port 5000
+2026-04-08T11:47:38.893Z info: Server running on port 5000
+2026-04-09T07:12:13.368Z info: Server running on port 5000
+2026-04-09T07:38:56.648Z info: Server running on port 5000
+2026-04-09T07:39:04.145Z info: Login request received
+2026-04-09T07:39:04.209Z warn: Invalid login attempt: test@gmail.com
+2026-04-09T07:39:15.441Z info: Login request received
+2026-04-09T07:39:15.444Z warn: Invalid login attempt: test@gmail.com
+2026-04-09T07:39:42.204Z info: Login request received
+2026-04-09T07:39:42.219Z info: Login successful for ashu@gmail.com 
+2026-04-09T07:52:08.579Z info: Server running on port 5000
+2026-04-09T07:53:08.839Z info: Server running on port 5000
+2026-04-09T07:53:30.812Z info: Farmer Data: manu puen 934254355
+2026-04-09T07:53:30.829Z error: Database error: Error: Table 'login_app.farmers' doesn't exist
+2026-04-09T07:56:12.878Z info: Farmer Data: shiru pune 9843632423
+2026-04-09T07:56:12.886Z info: Farmer added successfully
+2026-04-10T06:19:51.615Z info: Server running on port undefined
+2026-04-10T06:20:55.738Z info: Server running on port undefined
+2026-04-10T06:21:06.481Z info: Server running on port undefined
+2026-04-10T06:21:23.042Z info: Server running on port undefined
+2026-04-10T06:21:52.128Z info: Server running on port 5000
+2026-04-10T06:41:28.348Z info: Server running on port 5000
+2026-04-10T06:43:25.614Z info: Farmer Data: bheem dholakpur 92856435623
+2026-04-10T06:43:25.627Z info: Farmer added successfully
+2026-04-10T07:36:07.574Z info: Login request received
+2026-04-10T07:36:07.583Z warn: Invalid login attempt: test@gmail.com
+2026-04-10T07:36:26.404Z info: Login request received
+2026-04-10T07:36:26.406Z warn: Invalid login attempt: ashu@gmailcom
+2026-04-10T07:36:38.159Z info: Login request received
+2026-04-10T07:36:38.163Z warn: Invalid login attempt: ashu@gmailcom
+2026-04-10T07:36:51.066Z info: Login request received
+2026-04-10T07:36:51.068Z warn: Invalid login attempt: test@gmail.com
+2026-04-10T07:36:59.268Z info: Login request received
+2026-04-10T07:36:59.270Z warn: Invalid login attempt: test@gmail.com
+2026-04-10T07:37:45.899Z info: Login request received
+2026-04-10T07:37:45.901Z info: Login successful for ashu@gmail.com
+2026-04-10T07:38:31.092Z info: Login request received
+2026-04-10T07:38:31.094Z info: Login successful for ashu@gmail.com
+2026-04-10T07:44:04.881Z info: Farmer Data: raju pune 328769324432
+2026-04-10T07:44:04.885Z info: Farmer added successfully
+2026-04-10T07:47:18.948Z info: Farmer Data: bhem pune 9234775234
+2026-04-10T07:47:18.961Z info: Farmer added successfully
+2026-04-10T07:55:16.880Z info: Farmer Data: rajesh pune  983242842
+2026-04-10T07:55:16.893Z info: Farmer added successfully
+2026-04-10T08:06:49.592Z info: Server running on port 5000
+2026-04-10T11:04:52.750Z info: Server running on port 5000
