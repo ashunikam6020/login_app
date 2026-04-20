@@ -1,45 +1,48 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../config/db");
+const milkModel = require("../models/milkModel");
 
-router.post("/milk-entry", (req, res) => 
-{
-  const 
-  {
-    agentId,
-    name,
-    can,
-    ltr,
-    fat,
-    snf,
-    rate,
-    total,
-    type,
-    date
-  } = req.body;
+
+// ✅ ADD MILK ENTRY
+router.post("/milk-entry", (req, res) => {
 
   console.log("Milk Entry:", req.body);
 
-  db.query(
-    "INSERT INTO milk_entries (agentId,name,can,ltr,fat,snf,rate,total,type,date) VALUES (?,?,?,?,?,?,?,?,?,?)",
-    [agentId, name, can, ltr, fat, snf, rate, total, type, date],
-    (err, result) => 
-    {
-      if (err) {
-        console.log("DB Error:", err);
-        return res.json({
-          success: false,
-          message: "Database error"
-        });
-      }
+  milkModel.addMilkEntry(req.body, (err, result) => {
 
-      res.json({
-        success: true,
-        message: "Milk entry saved"
+    if (err) {
+      console.log("DB Error:", err);
+      return res.status(500).json({
+        success: false,
+        message: err.message
       });
-      console.log("Milk entry saved:", result); 
     }
-  );
+
+    console.log("✅ Data inserted successfully");
+
+    res.status(201).json({
+      success: true,
+      message: "Milk entry saved"
+    });
+  });
 });
+
+
+// ✅ GET ALL MILK ENTRIES (IMPORTANT FOR UI)
+router.get("/milk-entry", (req, res) => {
+
+  milkModel.getMilkEntries((err, result) => {
+    if (err) {
+      console.log("DB Error:", err);
+      return res.status(500).json({ success: false });
+    }
+
+    res.json({
+      success: true,
+      data: result
+    });
+  });
+});
+
 
 module.exports = router;

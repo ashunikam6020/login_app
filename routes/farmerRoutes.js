@@ -1,26 +1,62 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../config/db");
-const logger = require("../utils/logger");
+const farmerModel = require("../models/farmerModel");
 
-router.post("/farmer", (req, res) => {
-  const { name, village, phone } = req.body;
 
-  logger.info(`Farmer Data: ${name} ${village} ${phone}`);
+// ✅ ADD FARMER
+// ✅ ADD FARMER (WITH DUPLICATE CHECK RESPONSE)
+router.post("/farmers", (req, res) => {
 
-  db.query(
-    "INSERT INTO farmers (name,village,phone) VALUES (?,?,?)",
-    [name, village, phone],
-    (err, result) => {
-      if (err) {
-        logger.error("Database error: " + err);
-        return res.json({ success: false });
-      }
+  farmerModel.addFarmer(req.body, (err, result) => {
 
-      logger.info("Farmer added successfully");
-      res.json({ success: true });
+    if (err) {
+      return res.status(400).json({
+        success: false,
+        message: err.message || "Error inserting farmer"
+      });
     }
-  );
+
+    res.status(201).json({
+      success: true,
+      message: "Farmer added successfully"
+    });
+  });
+
+});
+// ✅ GET FARMERS
+router.get("/farmers", (req, res) => {
+  farmerModel.getFarmers((err, result) => {
+    if (err) {
+      console.log("❌ DB ERROR:", err);
+      return res.status(500).json({ success: false });
+    }
+
+    res.json({
+      success: true,
+      data: result
+    });
+  });
+});
+
+
+// ✅ DELETE FARMER
+router.delete("/farmers/:id", (req, res) => {
+  const { id } = req.params;
+
+  farmerModel.deleteFarmer(id, (err, result) => {
+    if (err) {
+      return res.status(500).json({ success: false });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ success: false });
+    }
+
+    res.json({
+      success: true,
+      message: "Farmer deleted"
+    });
+  });
 });
 
 module.exports = router;
